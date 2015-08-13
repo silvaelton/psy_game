@@ -13,7 +13,7 @@ class GroupsController < ApplicationController
 
 
   def show
-    @choices = Choice.where(group_id: params[:group_id]).group(:id, :user_id)
+    @choices = Choice.where(group_id: params[:group_id]).distinct(:user_id)
   end
 
   def create
