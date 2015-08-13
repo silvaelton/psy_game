@@ -1,0 +1,14 @@
+.row
+  .col-md-6.col-md-offset-3{'style': 'text-align:center'}
+    %h2
+      %b Rodada #{@step}
+    %h2
+      %small Selecione uma imagem
+%hr/
+.row
+  .col-md-4{'style':'margin-top:250px'}
+    = link_to image_tag("animal/#{@random}.jpg", width: 350),create_path(type: 'animal' )
+  .col-md-4
+    = link_to image_tag("human/#{@random}.jpg", width: 350),create_path(type: 'human' )
+  .col-md-4{'style':'margin-top:250px'}
+    = link_to image_tag("object/#{@random}.jpg", width: 350),create_path(type: 'object' )

@@ -1,0 +1,22 @@
+.row
+  .col-md-12
+    %h2
+      %strong Usuário #{params[:user_id]}
+    = link_to "Voltar", show_path(group_id: params[:group_id])
+%hr/
+.row
+  .col-md-12
+    %table.table.table-striped.table-bordered
+      %thead
+        %tr
+          %th Fase
+          %th Rodada
+          %th Escolha Usuário
+          %th Escolha CPU
+      %tbody
+        - @choices.each do |choice| 
+          %tr 
+            %td.col-md-1= choice.round_id
+            %td.col-md-1= choice.step_id
+            %td.col-md-3= choice.user_choice
+            %td.col-md-3= (choice.computer_choice.present?) ? choice.computer_choice : 'não participa'
