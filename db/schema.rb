@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20150813153324) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "choices", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "user_choice"
@@ -24,7 +27,7 @@ ActiveRecord::Schema.define(version: 20150813153324) do
     t.datetime "updated_at",      null: false
   end
 
-  add_index "choices", ["user_id"], name: "index_choices_on_user_id"
+  add_index "choices", ["user_id"], name: "index_choices_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "name"

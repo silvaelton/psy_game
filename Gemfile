@@ -20,14 +20,15 @@ gem 'bootstrap-sass', '~> 3.3.5'
 
 
 group :development, :test do
-  gem 'sqlite3'
+
   gem 'byebug'
   gem 'web-console', '~> 2.0'
   gem 'spring'
 end
 
+gem 'pg'
+
 group :production do 
-  gem 'pg'
   gem 'rails_12factor'
   gem 'unicorn'
 end
